@@ -12,7 +12,7 @@ pipeline{
     stages {
         stage("Checkout") {
             steps{
-                git 'https://github.com/nguyentduc89/cicd-2504.git'
+                git branch: 'main', url: 'https://github.com/nguyentduc89/cicd-2504.git'
                 script {
                     withCredentials([usernamePassword(credentialsId: 'git-cred', usernameVariable: 'GIT_USER', passwordVariable: 'GIT_TOKEN')]){
                     sh '''
@@ -21,8 +21,8 @@ pipeline{
                         git config --global user.name "Trung Duc"
                         git add deployment.yaml
                         git commit -m "update tag to ${IMG_TAG}"
-                        git remote set-url origin https://${GIT_USER}:${GIT_TOKEN}@github.com/nguyentduc89/2504-java-maven.git
-                        git push  origin HEAD:master
+                        git remote set-url origin https://${GIT_USER}:${GIT_TOKEN}@github.com/nguyentduc89/cicd-2504.git
+                        git push  origin HEAD:main
                        ''' 
                     }
                 }
