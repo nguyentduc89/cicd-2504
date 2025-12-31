@@ -2,7 +2,7 @@ pipeline{
     agent any
     tools {
         maven "Maven3"
-        jdk "jdk21"
+        jdk "jdk17"
     }
     environment {
       IMAGE_NAME='ducnt65/2504-repo'
