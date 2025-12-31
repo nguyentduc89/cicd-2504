@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: app-2504
-        image: ducnt65/2504-repo:tag-3
+        image: ducnt65/2504-repo:tag-4
         ports:
         - containerPort: 8080
       imagePullSecrets:
